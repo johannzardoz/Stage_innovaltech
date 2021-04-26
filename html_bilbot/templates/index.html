@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <style>
+      body {background-color:#202020;}
+  </style>
+
+  <body>
+     <center><h1><FONT face="Verdana" color="white">MENU PRINCIPAL BILBOT</FONT></h1>
+     <p><img src="{{ url_for('video_feed') }}"></p>
+
+     <h2><FONT face="Verdana" color="#7D7DFF">DEPLACEMENT DES YEUX</FONT></h2>
+        <form method="POST" action="horizontal">
+            <p><input type="range" min="25" max="80" name="slider" />
+            <input type="submit" value="Déplacement" /></p>
+        </form>
+
+     <h2><FONT face="Verdana" color="#FF7D7D">GESTION DES LEDS</FONT></h2>
+	      
+	<form method="POST" action="led_oeil">
+	    	<p><FONT face="Verdana" color="white">LED de l'oeil : </FONT>
+            	<input type="submit" value="Changer d'etat" /></p>
+        </form>
+	<form method="POST" action="led_socle">
+	    	<p><FONT face="Verdana" color="white">LED du socle : </FONT>
+            	<input type="submit" value="Changer d'etat" /></p>
+        </form>
+
+    <h2><FONT face="Verdana" color="#FFF77D">FAIRE PARLER BILBOT</FONT></h2>
+
+    <form method="POST" action = "/message">
+      <div class = "form-group">
+        <input type="text" name = "message">
+	<input class="btn btn-primary" type="submit" value="Dire, en français">
+      </div>  
+    </form>
+
+    <form method="POST" action="/traduction">
+           <p><input type="submit" value="MODE TRADUCTEUR" /></p>
+    </form>
+    
+
+  </body>
+</html>
